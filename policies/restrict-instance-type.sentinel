@@ -1,0 +1,18 @@
+import "tfplan/v2" as tfplan
+
+# Allowed instance type for node groups
+allowed_instance_type = "t2.micro"
+
+# Rule: Ensure all node groups use t2.micro
+check_instance_type = rule {
+    all tfplan.resources.aws_eks_node_group as node_group {
+        all node_group.applied.scaling_config.desired_size as idx {
+            node_group.applied.instance_types[idx] == allowed_instance_type
+        }
+    }
+}
+
+# Main enforcement rule
+main = rule {
+    check_instance_type
+}

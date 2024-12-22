@@ -1,0 +1,22 @@
+import "tfplan/v2" as tfplan
+
+tfplan.mock = import "mock-tfplan.sentinel"
+
+required_subnets = [
+    "subnet-055b1424b0ebdaf5d", 
+    "subnet-06d154ee74cb2e728",
+    "subnet-0c597c1c245d4c15f",
+    "subnet-0f89ee852c8aef9eb",
+]
+required_azs = ["us-east-1a", "us-east-1b"]
+
+check_az_and_subnets = rule {
+    all tfplan.resources.aws_eks_cluster as cluster {
+        cluster.applied.vpc_config.subnet_ids contains all required_subnets and
+        length(cluster.applied.vpc_config.subnet_ids) >= 2
+    }
+}
+
+main = rule {
+    check_az_and_subnets
+}
