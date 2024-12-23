@@ -13,7 +13,7 @@ terraform {
         organization = "Aaronhood"
 
         workspaces {
-            name = "API_PROJ"
+            name = "PAC-PROJ"
         }
     }
 }
