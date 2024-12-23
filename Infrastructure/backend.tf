@@ -7,16 +7,16 @@ terraform {
     encrypt = true
   }
 }
-# terraform {
-#     backend "remote" {
-#         hostname = "app.terraform.io"
-#         organization = "Aaronhood"
+terraform {
+    backend "remote" {
+        hostname = "app.terraform.io"
+        organization = "Aaronhood"
 
-#         workspaces {
-#             name = "API_PROJ"
-#         }
-#     }
-# }
+        workspaces {
+            name = "API_PROJ"
+        }
+    }
+}
 
 # resource "aws_s3_bucket" "terraform_state" {
 #   bucket = "api-terraform-state-file-bucket"
