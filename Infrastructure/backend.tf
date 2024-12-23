@@ -6,14 +6,13 @@ terraform {
     dynamodb_table = "terraform-state-locking"
     encrypt = true
   }
-}
-terraform {
-    backend "remote" {
-        hostname = "app.terraform.io"
+
+  backend "remote" {
+     hostname = "app.terraform.io"
         organization = "Aaronhood"
 
-        workspaces {
-            name = "PAC-PROJ"
+    workspaces {
+        name = "PAC-PROJ"
         }
     }
 }
