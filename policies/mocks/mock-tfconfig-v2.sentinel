@@ -1,0 +1,1302 @@
+import "strings"
+
+providers = {
+	"aws": {
+		"alias": "",
+		"config": {
+			"access_key": {
+				"constant_value": "AKIA4G4AVNSF455D4XVT",
+			},
+			"region": {
+				"constant_value": "us-east-1",
+			},
+			"secret_key": {
+				"constant_value": "DBjDY7qbAEzO8uPT8/DZm6OHAQfTYdOlqCXOmQ0M",
+			},
+		},
+		"full_name":           "registry.terraform.io/hashicorp/aws",
+		"module_address":      "",
+		"name":                "aws",
+		"provider_config_key": "aws",
+		"version_constraint":  "~> 5.34.0",
+	},
+	"external": {
+		"alias":               "",
+		"config":              {},
+		"full_name":           "registry.terraform.io/hashicorp/external",
+		"module_address":      "",
+		"name":                "external",
+		"provider_config_key": "external",
+		"version_constraint":  "~> 2.3.1",
+	},
+	"kubectl": {
+		"alias":               "",
+		"config":              {},
+		"full_name":           "registry.terraform.io/gavinbunney/kubectl",
+		"module_address":      "",
+		"name":                "kubectl",
+		"provider_config_key": "kubectl",
+		"version_constraint":  ">= 1.14.0",
+	},
+	"kubernetes": {
+		"alias": "",
+		"config": {
+			"cluster_ca_certificate": {
+				"references": [
+					"aws_eks_cluster.api_eks_cluster.certificate_authority[0].data",
+					"aws_eks_cluster.api_eks_cluster.certificate_authority[0]",
+					"aws_eks_cluster.api_eks_cluster.certificate_authority",
+					"aws_eks_cluster.api_eks_cluster",
+				],
+			},
+			"host": {
+				"references": [
+					"aws_eks_cluster.api_eks_cluster.endpoint",
+					"aws_eks_cluster.api_eks_cluster",
+				],
+			},
+			"token": {
+				"references": [
+					"data.aws_eks_cluster_auth.api_cluster_auth.token",
+					"data.aws_eks_cluster_auth.api_cluster_auth",
+				],
+			},
+		},
+		"full_name":           "registry.terraform.io/hashicorp/kubernetes",
+		"module_address":      "",
+		"name":                "kubernetes",
+		"provider_config_key": "kubernetes",
+		"version_constraint":  "2.24.0",
+	},
+	"local": {
+		"alias":               "",
+		"config":              {},
+		"full_name":           "registry.terraform.io/hashicorp/local",
+		"module_address":      "",
+		"name":                "local",
+		"provider_config_key": "local",
+		"version_constraint":  "~> 2.4.0",
+	},
+	"null": {
+		"alias":               "",
+		"config":              {},
+		"full_name":           "registry.terraform.io/hashicorp/null",
+		"module_address":      "",
+		"name":                "null",
+		"provider_config_key": "null",
+		"version_constraint":  "~> 3.2.0",
+	},
+}
+
+resources = {
+	"aws_eip.api_eip": {
+		"address": "aws_eip.api_eip",
+		"config": {
+			"domain": {
+				"constant_value": "vpc",
+			},
+		},
+		"count": {
+			"constant_value": 2,
+		},
+		"depends_on": [
+			"aws_internet_gateway.api_gw",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_eip",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_eip",
+	},
+	"aws_eks_addon.coredns": {
+		"address": "aws_eks_addon.coredns",
+		"config": {
+			"addon_name": {
+				"constant_value": "coredns",
+			},
+			"cluster_name": {
+				"references": [
+					"aws_eks_cluster.api_eks_cluster.name",
+					"aws_eks_cluster.api_eks_cluster",
+				],
+			},
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_cluster.api_eks_cluster",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "coredns",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_eks_addon",
+	},
+	"aws_eks_addon.kube_proxy": {
+		"address": "aws_eks_addon.kube_proxy",
+		"config": {
+			"addon_name": {
+				"constant_value": "kube-proxy",
+			},
+			"cluster_name": {
+				"references": [
+					"aws_eks_cluster.api_eks_cluster.name",
+					"aws_eks_cluster.api_eks_cluster",
+				],
+			},
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_cluster.api_eks_cluster",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "kube_proxy",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_eks_addon",
+	},
+	"aws_eks_addon.vpc_cni": {
+		"address": "aws_eks_addon.vpc_cni",
+		"config": {
+			"addon_name": {
+				"constant_value": "vpc-cni",
+			},
+			"cluster_name": {
+				"references": [
+					"aws_eks_cluster.api_eks_cluster.name",
+					"aws_eks_cluster.api_eks_cluster",
+				],
+			},
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_cluster.api_eks_cluster",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "vpc_cni",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_eks_addon",
+	},
+	"aws_eks_cluster.api_eks_cluster": {
+		"address": "aws_eks_cluster.api_eks_cluster",
+		"config": {
+			"name": {
+				"constant_value": "api-cluster",
+			},
+			"role_arn": {
+				"references": [
+					"aws_iam_role.eks_role.arn",
+					"aws_iam_role.eks_role",
+				],
+			},
+			"version": {
+				"references": [
+					"var.eks_version",
+				],
+			},
+			"vpc_config": [
+				{
+					"endpoint_private_access": {
+						"constant_value": true,
+					},
+					"endpoint_public_access": {
+						"constant_value": true,
+					},
+					"security_group_ids": {
+						"references": [
+							"aws_security_group.api_eks_node_group_sg.id",
+							"aws_security_group.api_eks_node_group_sg",
+						],
+					},
+					"subnet_ids": {
+						"references": [
+							"aws_subnet.api_pri_subnet",
+						],
+					},
+				},
+			],
+		},
+		"count": {},
+		"depends_on": [
+			"aws_iam_role_policy_attachment.api-AmazonEKSClusterPolicy",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_eks_cluster",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_eks_cluster",
+	},
+	"aws_eks_fargate_profile.api_eks_fargate_profile": {
+		"address": "aws_eks_fargate_profile.api_eks_fargate_profile",
+		"config": {
+			"cluster_name": {
+				"references": [
+					"aws_eks_cluster.api_eks_cluster.name",
+					"aws_eks_cluster.api_eks_cluster",
+				],
+			},
+			"fargate_profile_name": {
+				"constant_value": "api-eks-fargate-profile",
+			},
+			"pod_execution_role_arn": {
+				"references": [
+					"aws_iam_role.eks_role.arn",
+					"aws_iam_role.eks_role",
+				],
+			},
+			"selector": [
+				{
+					"namespace": {
+						"constant_value": "default",
+					},
+				},
+			],
+			"subnet_ids": {
+				"references": [
+					"aws_subnet.api_pri_subnet",
+				],
+			},
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_node_group.api_eks_group",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_eks_fargate_profile",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_eks_fargate_profile",
+	},
+	"aws_eks_node_group.api_eks_group": {
+		"address": "aws_eks_node_group.api_eks_group",
+		"config": {
+			"ami_type": {
+				"constant_value": "AL2_x86_64",
+			},
+			"cluster_name": {
+				"references": [
+					"aws_eks_cluster.api_eks_cluster.name",
+					"aws_eks_cluster.api_eks_cluster",
+				],
+			},
+			"instance_types": {
+				"constant_value": [
+					"t2.micro",
+				],
+			},
+			"node_group_name": {
+				"constant_value": "api-node-group",
+			},
+			"node_role_arn": {
+				"references": [
+					"aws_iam_role.api_eks_node_group.arn",
+					"aws_iam_role.api_eks_node_group",
+				],
+			},
+			"scaling_config": [
+				{
+					"desired_size": {
+						"constant_value": 3,
+					},
+					"max_size": {
+						"constant_value": 4,
+					},
+					"min_size": {
+						"constant_value": 2,
+					},
+				},
+			],
+			"subnet_ids": {
+				"references": [
+					"aws_subnet.api_pri_subnet",
+				],
+			},
+			"tags": {
+				"constant_value": {
+					"Name": "api-eks_node_group",
+				},
+			},
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_cluster.api_eks_cluster",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_eks_group",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_eks_node_group",
+	},
+	"aws_iam_policy.terraform_backend_policy": {
+		"address": "aws_iam_policy.terraform_backend_policy",
+		"config": {
+			"description": {
+				"constant_value": "IAM policy for Terraform backend storage in S3 and DynamoDB",
+			},
+			"name": {
+				"constant_value": "terraform-backend-policy",
+			},
+			"policy": {
+				"constant_value": null,
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "terraform_backend_policy",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_policy",
+	},
+	"aws_iam_role.api_eks_node_group": {
+		"address": "aws_iam_role.api_eks_node_group",
+		"config": {
+			"assume_role_policy": {
+				"constant_value": null,
+			},
+			"name": {
+				"constant_value": "api-node-group",
+			},
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_cluster.api_eks_cluster",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_eks_node_group",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role",
+	},
+	"aws_iam_role.eks_role": {
+		"address": "aws_iam_role.eks_role",
+		"config": {
+			"assume_role_policy": {
+				"references": [
+					"data.aws_iam_policy_document.assume_role.json",
+					"data.aws_iam_policy_document.assume_role",
+				],
+			},
+			"name": {
+				"constant_value": "api-eks-cluster-role",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "eks_role",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role",
+	},
+	"aws_iam_role.terraform_backend": {
+		"address": "aws_iam_role.terraform_backend",
+		"config": {
+			"assume_role_policy": {
+				"constant_value": null,
+			},
+			"name": {
+				"constant_value": "terraform-backend-role",
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "terraform_backend",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role",
+	},
+	"aws_iam_role_policy_attachment.api-AmazonEKSClusterPolicy": {
+		"address": "aws_iam_role_policy_attachment.api-AmazonEKSClusterPolicy",
+		"config": {
+			"policy_arn": {
+				"constant_value": "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
+			},
+			"role": {
+				"references": [
+					"aws_iam_role.eks_role.name",
+					"aws_iam_role.eks_role",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api-AmazonEKSClusterPolicy",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role_policy_attachment",
+	},
+	"aws_iam_role_policy_attachment.api-node_group_policy_attachments": {
+		"address": "aws_iam_role_policy_attachment.api-node_group_policy_attachments",
+		"config": {
+			"policy_arn": {
+				"references": [
+					"count.index",
+				],
+			},
+			"role": {
+				"references": [
+					"aws_iam_role.api_eks_node_group.name",
+					"aws_iam_role.api_eks_node_group",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api-node_group_policy_attachments",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role_policy_attachment",
+	},
+	"aws_iam_role_policy_attachment.attach_policy": {
+		"address": "aws_iam_role_policy_attachment.attach_policy",
+		"config": {
+			"policy_arn": {
+				"references": [
+					"aws_iam_policy.terraform_backend_policy.arn",
+					"aws_iam_policy.terraform_backend_policy",
+				],
+			},
+			"role": {
+				"references": [
+					"aws_iam_role.terraform_backend.name",
+					"aws_iam_role.terraform_backend",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "attach_policy",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_role_policy_attachment",
+	},
+	"aws_internet_gateway.api_gw": {
+		"address": "aws_internet_gateway.api_gw",
+		"config": {
+			"tags": {
+				"constant_value": {
+					"Name": "api-proj-gw",
+				},
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.api_vpc.id",
+					"aws_vpc.api_vpc",
+				],
+			},
+		},
+		"count": {},
+		"depends_on": [
+			"aws_vpc.api_vpc",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_gw",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_internet_gateway",
+	},
+	"aws_nat_gateway.api_ngw": {
+		"address": "aws_nat_gateway.api_ngw",
+		"config": {
+			"allocation_id": {
+				"references": [
+					"aws_eip.api_eip",
+					"count.index",
+				],
+			},
+			"subnet_id": {
+				"references": [
+					"aws_subnet.api_pub_subnet",
+					"count.index",
+				],
+			},
+		},
+		"count": {
+			"constant_value": 2,
+		},
+		"depends_on": [
+			"aws_internet_gateway.api_gw",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_ngw",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_nat_gateway",
+	},
+	"aws_route_table.api_pri_route_table": {
+		"address": "aws_route_table.api_pri_route_table",
+		"config": {
+			"route": {
+				"references": [
+					"aws_nat_gateway.api_ngw",
+					"count.index",
+					"var.cidr_block",
+				],
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.api_vpc.id",
+					"aws_vpc.api_vpc",
+				],
+			},
+		},
+		"count": {
+			"constant_value": 2,
+		},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_pri_route_table",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_route_table",
+	},
+	"aws_route_table.api_pub_route_table": {
+		"address": "aws_route_table.api_pub_route_table",
+		"config": {
+			"route": {
+				"references": [
+					"aws_internet_gateway.api_gw.id",
+					"aws_internet_gateway.api_gw",
+					"var.cidr_block",
+				],
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.api_vpc.id",
+					"aws_vpc.api_vpc",
+				],
+			},
+		},
+		"count": {
+			"constant_value": 2,
+		},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_pub_route_table",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_route_table",
+	},
+	"aws_route_table_association.api_pri_route_table": {
+		"address": "aws_route_table_association.api_pri_route_table",
+		"config": {
+			"route_table_id": {
+				"references": [
+					"aws_route_table.api_pri_route_table",
+					"count.index",
+				],
+			},
+			"subnet_id": {
+				"references": [
+					"aws_subnet.api_pri_subnet",
+					"count.index",
+				],
+			},
+		},
+		"count": {
+			"references": [
+				"aws_subnet.api_pri_subnet",
+			],
+		},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_pri_route_table",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_route_table_association",
+	},
+	"aws_route_table_association.api_pub_route_table": {
+		"address": "aws_route_table_association.api_pub_route_table",
+		"config": {
+			"route_table_id": {
+				"references": [
+					"aws_route_table.api_pub_route_table",
+					"count.index",
+				],
+			},
+			"subnet_id": {
+				"references": [
+					"aws_subnet.api_pub_subnet",
+					"count.index",
+				],
+			},
+		},
+		"count": {
+			"references": [
+				"aws_subnet.api_pub_subnet",
+			],
+		},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_pub_route_table",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_route_table_association",
+	},
+	"aws_security_group.api_eks_node_group_sg": {
+		"address": "aws_security_group.api_eks_node_group_sg",
+		"config": {
+			"egress": {
+				"constant_value": [
+					{
+						"cidr_blocks": [
+							"0.0.0.0/0",
+						],
+						"description":      null,
+						"from_port":        0,
+						"ipv6_cidr_blocks": null,
+						"prefix_list_ids":  null,
+						"protocol":         "-1",
+						"security_groups":  null,
+						"self":             null,
+						"to_port":          0,
+					},
+				],
+			},
+			"ingress": {
+				"constant_value": [
+					{
+						"cidr_blocks": [
+							"0.0.0.0/0",
+						],
+						"description":      null,
+						"from_port":        443,
+						"ipv6_cidr_blocks": null,
+						"prefix_list_ids":  null,
+						"protocol":         "tcp",
+						"security_groups":  null,
+						"self":             null,
+						"to_port":          443,
+					},
+				],
+			},
+			"name_prefix": {
+				"constant_value": "api-eks-node-group-sg-",
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.api_vpc.id",
+					"aws_vpc.api_vpc",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_eks_node_group_sg",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_security_group",
+	},
+	"aws_subnet.api_pri_subnet": {
+		"address": "aws_subnet.api_pri_subnet",
+		"config": {
+			"availability_zone": {
+				"references": [
+					"var.availability_zones",
+					"count.index",
+				],
+			},
+			"cidr_block": {
+				"references": [
+					"var.private_subnet_cidrs",
+					"count.index",
+				],
+			},
+			"tags": {
+				"references": [
+					"count.index",
+				],
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.api_vpc.id",
+					"aws_vpc.api_vpc",
+				],
+			},
+		},
+		"count": {
+			"references": [
+				"var.availability_zones",
+			],
+		},
+		"depends_on": [
+			"aws_vpc.api_vpc",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_pri_subnet",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_subnet",
+	},
+	"aws_subnet.api_pub_subnet": {
+		"address": "aws_subnet.api_pub_subnet",
+		"config": {
+			"availability_zone": {
+				"references": [
+					"var.availability_zones",
+					"count.index",
+				],
+			},
+			"cidr_block": {
+				"references": [
+					"var.public_subnet_cidrs",
+					"count.index",
+				],
+			},
+			"tags": {
+				"references": [
+					"count.index",
+				],
+			},
+			"vpc_id": {
+				"references": [
+					"aws_vpc.api_vpc.id",
+					"aws_vpc.api_vpc",
+				],
+			},
+		},
+		"count": {
+			"references": [
+				"var.availability_zones",
+			],
+		},
+		"depends_on": [
+			"aws_vpc.api_vpc",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_pub_subnet",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_subnet",
+	},
+	"aws_vpc.api_vpc": {
+		"address": "aws_vpc.api_vpc",
+		"config": {
+			"cidr_block": {
+				"references": [
+					"var.vpc_cidr",
+				],
+			},
+			"tags": {
+				"constant_value": {
+					"name": "api-proj-vpc",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_vpc",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_vpc",
+	},
+	"data.aws_eks_cluster.api_eks_cluster": {
+		"address": "data.aws_eks_cluster.api_eks_cluster",
+		"config": {
+			"name": {
+				"references": [
+					"aws_eks_cluster.api_eks_cluster.name",
+					"aws_eks_cluster.api_eks_cluster",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "api_eks_cluster",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_eks_cluster",
+	},
+	"data.aws_eks_cluster_auth.api_cluster_auth": {
+		"address": "data.aws_eks_cluster_auth.api_cluster_auth",
+		"config": {
+			"name": {
+				"references": [
+					"data.aws_eks_cluster.api_eks_cluster.name",
+					"data.aws_eks_cluster.api_eks_cluster",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "api_cluster_auth",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_eks_cluster_auth",
+	},
+	"data.aws_iam_policy_document.assume_role": {
+		"address": "data.aws_iam_policy_document.assume_role",
+		"config": {
+			"statement": [
+				{
+					"actions": {
+						"constant_value": [
+							"sts:AssumeRole",
+						],
+					},
+					"effect": {
+						"constant_value": "Allow",
+					},
+					"principals": [
+						{
+							"identifiers": {
+								"constant_value": [
+									"eks.amazonaws.com",
+								],
+							},
+							"type": {
+								"constant_value": "Service",
+							},
+						},
+					],
+				},
+				{
+					"actions": {
+						"constant_value": [
+							"sts:AssumeRole",
+						],
+					},
+					"effect": {
+						"constant_value": "Allow",
+					},
+					"principals": [
+						{
+							"identifiers": {
+								"constant_value": [
+									"eks-fargate-pods.amazonaws.com",
+								],
+							},
+							"type": {
+								"constant_value": "Service",
+							},
+						},
+					],
+				},
+			],
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "data",
+		"module_address":      "",
+		"name":                "assume_role",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_iam_policy_document",
+	},
+	"kubernetes_deployment.api_eks_deployment": {
+		"address": "kubernetes_deployment.api_eks_deployment",
+		"config": {
+			"metadata": [
+				{
+					"labels": {
+						"constant_value": {
+							"app": "api-application",
+						},
+					},
+					"name": {
+						"constant_value": "api-eks-app-deployment",
+					},
+					"namespace": {
+						"references": [
+							"kubernetes_namespace.api_eks_namespace.metadata[0].name",
+							"kubernetes_namespace.api_eks_namespace.metadata[0]",
+							"kubernetes_namespace.api_eks_namespace.metadata",
+							"kubernetes_namespace.api_eks_namespace",
+						],
+					},
+				},
+			],
+			"spec": [
+				{
+					"replicas": {
+						"constant_value": 3,
+					},
+					"selector": [
+						{
+							"match_labels": {
+								"constant_value": {
+									"app": "api-application",
+								},
+							},
+						},
+					],
+					"template": [
+						{
+							"metadata": [
+								{
+									"labels": {
+										"constant_value": {
+											"app": "api-application",
+										},
+									},
+								},
+							],
+							"spec": [
+								{
+									"container": [
+										{
+											"image": {
+												"constant_value": "aaronhood/api-current-time:1",
+											},
+											"name": {
+												"constant_value": "api-eks-container",
+											},
+											"resources": [
+												{
+													"limits": {
+														"constant_value": {
+															"cpu":    "0.5",
+															"memory": "512Mi",
+														},
+													},
+													"requests": {
+														"constant_value": {
+															"cpu":    "250m",
+															"memory": "50Mi",
+														},
+													},
+												},
+											],
+										},
+									],
+								},
+							],
+						},
+					],
+				},
+			],
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_node_group.api_eks_group",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_eks_deployment",
+		"provider_config_key": "kubernetes",
+		"provisioners":        [],
+		"type":                "kubernetes_deployment",
+	},
+	"kubernetes_namespace.api_eks_namespace": {
+		"address": "kubernetes_namespace.api_eks_namespace",
+		"config": {
+			"metadata": [
+				{
+					"name": {
+						"constant_value": "api-eks-namespace",
+					},
+				},
+			],
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_node_group.api_eks_group",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_eks_namespace",
+		"provider_config_key": "kubernetes",
+		"provisioners":        [],
+		"type":                "kubernetes_namespace",
+	},
+	"kubernetes_pod.api_pod": {
+		"address": "kubernetes_pod.api_pod",
+		"config": {
+			"metadata": [
+				{
+					"labels": {
+						"constant_value": {
+							"app": "api-application",
+						},
+					},
+					"name": {
+						"constant_value": "api-eks-app-pod",
+					},
+					"namespace": {
+						"constant_value": "api-eks-namespace",
+					},
+				},
+			],
+			"spec": [
+				{
+					"container": [
+						{
+							"image": {
+								"constant_value": "aaronhood/api-current-time:1",
+							},
+							"name": {
+								"constant_value": "api-eks-container",
+							},
+							"port": [
+								{
+									"container_port": {
+										"constant_value": 8000,
+									},
+								},
+							],
+						},
+					],
+				},
+			],
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_node_group.api_eks_group",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_pod",
+		"provider_config_key": "kubernetes",
+		"provisioners":        [],
+		"type":                "kubernetes_pod",
+	},
+	"kubernetes_service.api_eks_service": {
+		"address": "kubernetes_service.api_eks_service",
+		"config": {
+			"metadata": [
+				{
+					"name": {
+						"constant_value": "api-service",
+					},
+					"namespace": {
+						"constant_value": "api-eks-namespace",
+					},
+				},
+			],
+			"spec": [
+				{
+					"port": [
+						{
+							"port": {
+								"constant_value": 80,
+							},
+							"protocol": {
+								"constant_value": "TCP",
+							},
+							"target_port": {
+								"constant_value": 8000,
+							},
+						},
+					],
+					"selector": {
+						"constant_value": {
+							"app": "api-application",
+						},
+					},
+					"type": {
+						"constant_value": "LoadBalancer",
+					},
+				},
+			],
+		},
+		"count": {},
+		"depends_on": [
+			"aws_eks_node_group.api_eks_group",
+		],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "api_eks_service",
+		"provider_config_key": "kubernetes",
+		"provisioners":        [],
+		"type":                "kubernetes_service",
+	},
+}
+
+provisioners = {}
+
+variables = {
+	"availability_zones": {
+		"default": [
+			"us-east-1a",
+			"us-east-1b",
+		],
+		"description":    "The availability zones where the subnet belongs",
+		"module_address": "",
+		"name":           "availability_zones",
+	},
+	"cidr_block": {
+		"default":        "0.0.0.0/0",
+		"description":    "cidr block notations",
+		"module_address": "",
+		"name":           "cidr_block",
+	},
+	"cluster-name": {
+		"default":        "eks-api-cluster",
+		"description":    "The name of the EKS Cluster",
+		"module_address": "",
+		"name":           "cluster-name",
+	},
+	"eks_version": {
+		"default":        "1.31",
+		"description":    "",
+		"module_address": "",
+		"name":           "eks_version",
+	},
+	"private_subnet_cidrs": {
+		"default": [
+			"192.165.3.0/24",
+			"192.165.4.0/24",
+		],
+		"description":    "cidr blocks for the private subnet",
+		"module_address": "",
+		"name":           "private_subnet_cidrs",
+	},
+	"public_subnet_cidrs": {
+		"default": [
+			"192.165.1.0/24",
+			"192.165.2.0/24",
+		],
+		"description":    "cidr blocks for the public subnet",
+		"module_address": "",
+		"name":           "public_subnet_cidrs",
+	},
+	"vpc_cidr": {
+		"default":        "192.165.0.0/16",
+		"description":    "cidr block for the vpc",
+		"module_address": "",
+		"name":           "vpc_cidr",
+	},
+}
+
+outputs = {
+	"eks_cluster_endpoint": {
+		"depends_on":     [],
+		"description":    "",
+		"module_address": "",
+		"name":           "eks_cluster_endpoint",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"aws_eks_cluster.api_eks_cluster.endpoint",
+				"aws_eks_cluster.api_eks_cluster",
+			],
+		},
+	},
+	"eks_cluster_id": {
+		"depends_on":     [],
+		"description":    "",
+		"module_address": "",
+		"name":           "eks_cluster_id",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"aws_eks_cluster.api_eks_cluster.cluster_id",
+				"aws_eks_cluster.api_eks_cluster",
+			],
+		},
+	},
+	"private_subnets": {
+		"depends_on":     [],
+		"description":    "",
+		"module_address": "",
+		"name":           "private_subnets",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"aws_subnet.api_pri_subnet",
+			],
+		},
+	},
+	"public_subnets": {
+		"depends_on":     [],
+		"description":    "",
+		"module_address": "",
+		"name":           "public_subnets",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"aws_subnet.api_pub_subnet",
+			],
+		},
+	},
+	"vpc_id": {
+		"depends_on":     [],
+		"description":    "",
+		"module_address": "",
+		"name":           "vpc_id",
+		"sensitive":      false,
+		"value": {
+			"references": [
+				"aws_vpc.api_vpc.id",
+				"aws_vpc.api_vpc",
+			],
+		},
+	},
+}
+
+module_calls = {}
+
+strip_index = func(addr) {
+	s = strings.split(addr, ".")
+	for s as i, v {
+		s[i] = strings.split(v, "[")[0]
+	}
+
+	return strings.join(s, ".")
+}

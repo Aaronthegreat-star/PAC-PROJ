@@ -1,0 +1,38 @@
+id = "run-uZorLyE8A5Bmy19o"
+created_at = "2024-12-23T02:02:28.949Z"
+created_by = "aaronthegreat"
+message = "Triggered via CLI"
+commit_sha = undefined
+speculative = true
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+project = {
+	"id":   "prj-kp5mVcSwu4Ay1gHE",
+	"name": "Default Project",
+}
+
+variables = {}
+
+organization = {
+	"name": "Aaronhood",
+}
+
+workspace = {
+	"auto_apply":     false,
+	"created_at":     "2024-12-23T01:09:51.088Z",
+	"description":    "This is a policy as code frame work that restricts the creation of certain resources due to the presence of certain constraints",
+	"execution_mode": "default",
+	"id":             "ws-WoyeQwwJ1sJvzazD",
+	"name":           "PAC-PROJ",
+	"tags":           [],
+	"vcs_repo": {
+		"branch":             "",
+		"display_identifier": "Aaronthegreat-star/PAC-PROJ",
+		"identifier":         "Aaronthegreat-star/PAC-PROJ",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}

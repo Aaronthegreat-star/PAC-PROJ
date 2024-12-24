@@ -1,0 +1,5015 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {
+			"aws_eks_cluster": {
+				"api_eks_cluster": {
+					0: {
+						"applied": {
+							"name": "api-cluster",
+						},
+						"destroy": false,
+						"diff": {
+							"access_config.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"certificate_authority.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cluster_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"created_at": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enabled_cluster_log_types.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"endpoint": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"identity.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"kubernetes_network_config.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "api-cluster",
+								"old":      "",
+							},
+							"outpost_config.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"platform_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"role_arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"status": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_config.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+		"path": [],
+		"resources": {
+			"aws_eip": {
+				"api_eip": {
+					0: {
+						"applied": {
+							"address":                   null,
+							"associate_with_private_ip": null,
+							"customer_owned_ipv4_pool":  null,
+							"domain":                    "vpc",
+							"tags":                      null,
+							"timeouts":                  null,
+						},
+						"destroy": false,
+						"diff": {
+							"address": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"allocation_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"associate_with_private_ip": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"carrier_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"customer_owned_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"customer_owned_ipv4_pool": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"domain": {
+								"computed": false,
+								"new":      "vpc",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_border_group": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_dns": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"public_dns": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"public_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"public_ipv4_pool": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					1: {
+						"applied": {
+							"address":                   null,
+							"associate_with_private_ip": null,
+							"customer_owned_ipv4_pool":  null,
+							"domain":                    "vpc",
+							"tags":                      null,
+							"timeouts":                  null,
+						},
+						"destroy": false,
+						"diff": {
+							"address": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"allocation_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"associate_with_private_ip": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"carrier_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"customer_owned_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"customer_owned_ipv4_pool": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"domain": {
+								"computed": false,
+								"new":      "vpc",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_border_group": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_dns": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"public_dns": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"public_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"public_ipv4_pool": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_eks_addon": {
+				"coredns": {
+					0: {
+						"applied": {
+							"addon_name":                  "coredns",
+							"cluster_name":                "api-cluster",
+							"preserve":                    null,
+							"resolve_conflicts":           null,
+							"resolve_conflicts_on_create": null,
+							"resolve_conflicts_on_update": null,
+							"service_account_role_arn":    null,
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"addon_name": {
+								"computed": false,
+								"new":      "coredns",
+								"old":      "",
+							},
+							"addon_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cluster_name": {
+								"computed": false,
+								"new":      "api-cluster",
+								"old":      "",
+							},
+							"configuration_values": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"created_at": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"modified_at": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"preserve": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resolve_conflicts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resolve_conflicts_on_create": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resolve_conflicts_on_update": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"service_account_role_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"kube_proxy": {
+					0: {
+						"applied": {
+							"addon_name":                  "kube-proxy",
+							"cluster_name":                "api-cluster",
+							"preserve":                    null,
+							"resolve_conflicts":           null,
+							"resolve_conflicts_on_create": null,
+							"resolve_conflicts_on_update": null,
+							"service_account_role_arn":    null,
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"addon_name": {
+								"computed": false,
+								"new":      "kube-proxy",
+								"old":      "",
+							},
+							"addon_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cluster_name": {
+								"computed": false,
+								"new":      "api-cluster",
+								"old":      "",
+							},
+							"configuration_values": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"created_at": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"modified_at": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"preserve": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resolve_conflicts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resolve_conflicts_on_create": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resolve_conflicts_on_update": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"service_account_role_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"vpc_cni": {
+					0: {
+						"applied": {
+							"addon_name":                  "vpc-cni",
+							"cluster_name":                "api-cluster",
+							"preserve":                    null,
+							"resolve_conflicts":           null,
+							"resolve_conflicts_on_create": null,
+							"resolve_conflicts_on_update": null,
+							"service_account_role_arn":    null,
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"addon_name": {
+								"computed": false,
+								"new":      "vpc-cni",
+								"old":      "",
+							},
+							"addon_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cluster_name": {
+								"computed": false,
+								"new":      "api-cluster",
+								"old":      "",
+							},
+							"configuration_values": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"created_at": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"modified_at": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"preserve": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resolve_conflicts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resolve_conflicts_on_create": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resolve_conflicts_on_update": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"service_account_role_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_eks_cluster": {
+				"api_eks_cluster": {
+					0: {
+						"applied": {
+							"enabled_cluster_log_types": null,
+							"encryption_config":         [],
+							"name":                      "api-cluster",
+							"outpost_config":            [],
+							"tags":                      null,
+							"timeouts":                  null,
+							"version":                   "1.31",
+							"vpc_config": [
+								{
+									"endpoint_private_access": true,
+									"endpoint_public_access":  true,
+								},
+							],
+						},
+						"destroy": false,
+						"diff": {
+							"access_config.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"certificate_authority.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cluster_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"created_at": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enabled_cluster_log_types": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"encryption_config.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"endpoint": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"identity.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"kubernetes_network_config.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "api-cluster",
+								"old":      "",
+							},
+							"outpost_config.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"platform_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"role_arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"status": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"version": {
+								"computed": false,
+								"new":      "1.31",
+								"old":      "",
+							},
+							"vpc_config.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"vpc_config.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_config.0.cluster_security_group_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_config.0.endpoint_private_access": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"vpc_config.0.endpoint_public_access": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"vpc_config.0.public_access_cidrs": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_config.0.security_group_ids": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_config.0.subnet_ids": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_config.0.vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_eks_fargate_profile": {
+				"api_eks_fargate_profile": {
+					0: {
+						"applied": {
+							"cluster_name":         "api-cluster",
+							"fargate_profile_name": "api-eks-fargate-profile",
+							"selector": [
+								{
+									"labels":    null,
+									"namespace": "default",
+								},
+							],
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cluster_name": {
+								"computed": false,
+								"new":      "api-cluster",
+								"old":      "",
+							},
+							"fargate_profile_name": {
+								"computed": false,
+								"new":      "api-eks-fargate-profile",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"pod_execution_role_arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"selector.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"selector.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"selector.0.labels": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"selector.0.namespace": {
+								"computed": false,
+								"new":      "default",
+								"old":      "",
+							},
+							"status": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"subnet_ids.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_eks_node_group": {
+				"api_eks_group": {
+					0: {
+						"applied": {
+							"ami_type":             "AL2_x86_64",
+							"cluster_name":         "api-cluster",
+							"force_update_version": null,
+							"instance_types": [
+								"t2.micro",
+							],
+							"labels":          null,
+							"launch_template": [],
+							"node_group_name": "api-node-group",
+							"remote_access":   [],
+							"scaling_config": [
+								{
+									"desired_size": 3,
+									"max_size":     4,
+									"min_size":     2,
+								},
+							],
+							"tags": {
+								"Name": "api-eks_node_group",
+							},
+							"tags_all": {
+								"Name": "api-eks_node_group",
+							},
+							"taint":    [],
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"ami_type": {
+								"computed": false,
+								"new":      "AL2_x86_64",
+								"old":      "",
+							},
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"capacity_type": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cluster_name": {
+								"computed": false,
+								"new":      "api-cluster",
+								"old":      "",
+							},
+							"disk_size": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"force_update_version": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_types.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"instance_types.0": {
+								"computed": false,
+								"new":      "t2.micro",
+								"old":      "",
+							},
+							"labels": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"launch_template.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"node_group_name": {
+								"computed": false,
+								"new":      "api-node-group",
+								"old":      "",
+							},
+							"node_group_name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"node_role_arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"release_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"remote_access.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"resources.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"scaling_config.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"scaling_config.0.%": {
+								"computed": false,
+								"new":      "3",
+								"old":      "",
+							},
+							"scaling_config.0.desired_size": {
+								"computed": false,
+								"new":      "3",
+								"old":      "",
+							},
+							"scaling_config.0.max_size": {
+								"computed": false,
+								"new":      "4",
+								"old":      "",
+							},
+							"scaling_config.0.min_size": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"status": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"subnet_ids.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "api-eks_node_group",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "api-eks_node_group",
+								"old":      "",
+							},
+							"taint.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"update_config.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_iam_policy": {
+				"terraform_backend_policy": {
+					0: {
+						"applied": {
+							"description": "IAM policy for Terraform backend storage in S3 and DynamoDB",
+							"name":        "terraform-backend-policy",
+							"path":        "/",
+							"policy":      "{\"Statement\":[{\"Action\":[\"s3:PutObject\",\"s3:GetObject\",\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::api-terraform-state-file\",\"arn:aws:s3:::api-terraform-state-file/*\"]},{\"Action\":[\"dynamodb:PutItem\",\"dynamodb:GetItem\",\"dynamodb:UpdateItem\",\"dynamodb:DescribeTable\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:dynamodb:us-east-1:839399074955:table/terraform-state-locking\"}],\"Version\":\"2012-10-17\"}",
+							"tags":        null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "IAM policy for Terraform backend storage in S3 and DynamoDB",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "terraform-backend-policy",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"policy": {
+								"computed": false,
+								"new":      "{\"Statement\":[{\"Action\":[\"s3:PutObject\",\"s3:GetObject\",\"s3:ListBucket\"],\"Effect\":\"Allow\",\"Resource\":[\"arn:aws:s3:::api-terraform-state-file\",\"arn:aws:s3:::api-terraform-state-file/*\"]},{\"Action\":[\"dynamodb:PutItem\",\"dynamodb:GetItem\",\"dynamodb:UpdateItem\",\"dynamodb:DescribeTable\"],\"Effect\":\"Allow\",\"Resource\":\"arn:aws:dynamodb:us-east-1:839399074955:table/terraform-state-locking\"}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+							"policy_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_iam_role": {
+				"api_eks_node_group": {
+					0: {
+						"applied": {
+							"assume_role_policy":    "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+							"description":           null,
+							"force_detach_policies": false,
+							"max_session_duration":  3600,
+							"name":                  "api-node-group",
+							"path":                  "/",
+							"permissions_boundary":  null,
+							"tags":                  null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assume_role_policy": {
+								"computed": false,
+								"new":      "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+							"create_date": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"force_detach_policies": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"inline_policy.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"managed_policy_arns.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"max_session_duration": {
+								"computed": false,
+								"new":      "3600",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "api-node-group",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"permissions_boundary": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"unique_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"eks_role": {
+					0: {
+						"applied": {
+							"assume_role_policy":    "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"eks.amazonaws.com\"}},{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"eks-fargate-pods.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+							"description":           null,
+							"force_detach_policies": false,
+							"max_session_duration":  3600,
+							"name":                  "api-eks-cluster-role",
+							"path":                  "/",
+							"permissions_boundary":  null,
+							"tags":                  null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assume_role_policy": {
+								"computed": false,
+								"new":      "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"eks.amazonaws.com\"}},{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"eks-fargate-pods.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+							"create_date": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"force_detach_policies": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"inline_policy.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"managed_policy_arns.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"max_session_duration": {
+								"computed": false,
+								"new":      "3600",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "api-eks-cluster-role",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"permissions_boundary": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"unique_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"terraform_backend": {
+					0: {
+						"applied": {
+							"assume_role_policy":    "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+							"description":           null,
+							"force_detach_policies": false,
+							"max_session_duration":  3600,
+							"name":                  "terraform-backend-role",
+							"path":                  "/",
+							"permissions_boundary":  null,
+							"tags":                  null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assume_role_policy": {
+								"computed": false,
+								"new":      "{\"Statement\":[{\"Action\":\"sts:AssumeRole\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"ec2.amazonaws.com\"}}],\"Version\":\"2012-10-17\"}",
+								"old":      "",
+							},
+							"create_date": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"force_detach_policies": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"inline_policy.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"managed_policy_arns.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"max_session_duration": {
+								"computed": false,
+								"new":      "3600",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "terraform-backend-role",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"path": {
+								"computed": false,
+								"new":      "/",
+								"old":      "",
+							},
+							"permissions_boundary": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"unique_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_iam_role_policy_attachment": {
+				"api-AmazonEKSClusterPolicy": {
+					0: {
+						"applied": {
+							"policy_arn": "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
+							"role":       "api-eks-cluster-role",
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"policy_arn": {
+								"computed": false,
+								"new":      "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy",
+								"old":      "",
+							},
+							"role": {
+								"computed": false,
+								"new":      "api-eks-cluster-role",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"api-node_group_policy_attachments": {
+					0: {
+						"applied": {
+							"policy_arn": "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+							"role":       "api-node-group",
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"policy_arn": {
+								"computed": false,
+								"new":      "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
+								"old":      "",
+							},
+							"role": {
+								"computed": false,
+								"new":      "api-node-group",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					1: {
+						"applied": {
+							"policy_arn": "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+							"role":       "api-node-group",
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"policy_arn": {
+								"computed": false,
+								"new":      "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
+								"old":      "",
+							},
+							"role": {
+								"computed": false,
+								"new":      "api-node-group",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					2: {
+						"applied": {
+							"policy_arn": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+							"role":       "api-node-group",
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"policy_arn": {
+								"computed": false,
+								"new":      "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+								"old":      "",
+							},
+							"role": {
+								"computed": false,
+								"new":      "api-node-group",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"attach_policy": {
+					0: {
+						"applied": {
+							"role": "terraform-backend-role",
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"policy_arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"role": {
+								"computed": false,
+								"new":      "terraform-backend-role",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_internet_gateway": {
+				"api_gw": {
+					0: {
+						"applied": {
+							"tags": {
+								"Name": "api-proj-gw",
+							},
+							"tags_all": {
+								"Name": "api-proj-gw",
+							},
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "api-proj-gw",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "api-proj-gw",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_nat_gateway": {
+				"api_ngw": {
+					0: {
+						"applied": {
+							"connectivity_type":        "public",
+							"secondary_allocation_ids": null,
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"allocation_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"connectivity_type": {
+								"computed": false,
+								"new":      "public",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"public_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"secondary_allocation_ids": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"secondary_private_ip_address_count": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"secondary_private_ip_addresses.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"subnet_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					1: {
+						"applied": {
+							"connectivity_type":        "public",
+							"secondary_allocation_ids": null,
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"allocation_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"connectivity_type": {
+								"computed": false,
+								"new":      "public",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"network_interface_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"public_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"secondary_allocation_ids": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"secondary_private_ip_address_count": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"secondary_private_ip_addresses.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"subnet_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_route_table": {
+				"api_pri_route_table": {
+					0: {
+						"applied": {
+							"route": [
+								{
+									"carrier_gateway_id":         "",
+									"cidr_block":                 "0.0.0.0/0",
+									"core_network_arn":           "",
+									"destination_prefix_list_id": "",
+									"egress_only_gateway_id":     "",
+									"ipv6_cidr_block":            "",
+									"local_gateway_id":           "",
+									"nat_gateway_id":             "",
+									"network_interface_id":       "",
+									"transit_gateway_id":         "",
+									"vpc_endpoint_id":            "",
+									"vpc_peering_connection_id":  "",
+								},
+							],
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"propagating_vgws.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"route.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.carrier_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.cidr_block": {
+								"computed": false,
+								"new":      "0.0.0.0/0",
+								"old":      "",
+							},
+							"route.0.core_network_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.destination_prefix_list_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.egress_only_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.gateway_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.local_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.nat_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.network_interface_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.transit_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.vpc_endpoint_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.vpc_peering_connection_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					1: {
+						"applied": {
+							"route": [
+								{
+									"carrier_gateway_id":         "",
+									"cidr_block":                 "0.0.0.0/0",
+									"core_network_arn":           "",
+									"destination_prefix_list_id": "",
+									"egress_only_gateway_id":     "",
+									"ipv6_cidr_block":            "",
+									"local_gateway_id":           "",
+									"nat_gateway_id":             "",
+									"network_interface_id":       "",
+									"transit_gateway_id":         "",
+									"vpc_endpoint_id":            "",
+									"vpc_peering_connection_id":  "",
+								},
+							],
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"propagating_vgws.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"route.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.carrier_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.cidr_block": {
+								"computed": false,
+								"new":      "0.0.0.0/0",
+								"old":      "",
+							},
+							"route.0.core_network_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.destination_prefix_list_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.egress_only_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.gateway_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.local_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.nat_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.network_interface_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.transit_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.vpc_endpoint_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.vpc_peering_connection_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"api_pub_route_table": {
+					0: {
+						"applied": {
+							"route": [
+								{
+									"carrier_gateway_id":         "",
+									"cidr_block":                 "0.0.0.0/0",
+									"core_network_arn":           "",
+									"destination_prefix_list_id": "",
+									"egress_only_gateway_id":     "",
+									"ipv6_cidr_block":            "",
+									"local_gateway_id":           "",
+									"nat_gateway_id":             "",
+									"network_interface_id":       "",
+									"transit_gateway_id":         "",
+									"vpc_endpoint_id":            "",
+									"vpc_peering_connection_id":  "",
+								},
+							],
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"propagating_vgws.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"route.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.carrier_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.cidr_block": {
+								"computed": false,
+								"new":      "0.0.0.0/0",
+								"old":      "",
+							},
+							"route.0.core_network_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.destination_prefix_list_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.egress_only_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.gateway_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.local_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.nat_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.network_interface_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.transit_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.vpc_endpoint_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.vpc_peering_connection_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					1: {
+						"applied": {
+							"route": [
+								{
+									"carrier_gateway_id":         "",
+									"cidr_block":                 "0.0.0.0/0",
+									"core_network_arn":           "",
+									"destination_prefix_list_id": "",
+									"egress_only_gateway_id":     "",
+									"ipv6_cidr_block":            "",
+									"local_gateway_id":           "",
+									"nat_gateway_id":             "",
+									"network_interface_id":       "",
+									"transit_gateway_id":         "",
+									"vpc_endpoint_id":            "",
+									"vpc_peering_connection_id":  "",
+								},
+							],
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"propagating_vgws.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"route.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.carrier_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.cidr_block": {
+								"computed": false,
+								"new":      "0.0.0.0/0",
+								"old":      "",
+							},
+							"route.0.core_network_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.destination_prefix_list_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.egress_only_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.gateway_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.local_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.nat_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.network_interface_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.transit_gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.vpc_endpoint_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"route.0.vpc_peering_connection_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_route_table_association": {
+				"api_pri_route_table": {
+					0: {
+						"applied": {
+							"gateway_id": null,
+							"timeouts":   null,
+						},
+						"destroy": false,
+						"diff": {
+							"gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"subnet_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					1: {
+						"applied": {
+							"gateway_id": null,
+							"timeouts":   null,
+						},
+						"destroy": false,
+						"diff": {
+							"gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"subnet_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"api_pub_route_table": {
+					0: {
+						"applied": {
+							"gateway_id": null,
+							"timeouts":   null,
+						},
+						"destroy": false,
+						"diff": {
+							"gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"subnet_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					1: {
+						"applied": {
+							"gateway_id": null,
+							"timeouts":   null,
+						},
+						"destroy": false,
+						"diff": {
+							"gateway_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"subnet_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_security_group": {
+				"api_eks_node_group_sg": {
+					0: {
+						"applied": {
+							"description": "Managed by Terraform",
+							"egress": [
+								{
+									"cidr_blocks": [
+										"0.0.0.0/0",
+									],
+									"description":      "",
+									"from_port":        0,
+									"ipv6_cidr_blocks": [],
+									"prefix_list_ids":  [],
+									"protocol":         "-1",
+									"security_groups":  [],
+									"self":             false,
+									"to_port":          0,
+								},
+							],
+							"ingress": [
+								{
+									"cidr_blocks": [
+										"0.0.0.0/0",
+									],
+									"description":      "",
+									"from_port":        443,
+									"ipv6_cidr_blocks": [],
+									"prefix_list_ids":  [],
+									"protocol":         "tcp",
+									"security_groups":  [],
+									"self":             false,
+									"to_port":          443,
+								},
+							],
+							"name_prefix":            "api-eks-node-group-sg-",
+							"revoke_rules_on_delete": false,
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"description": {
+								"computed": false,
+								"new":      "Managed by Terraform",
+								"old":      "",
+							},
+							"egress.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"egress.0.%": {
+								"computed": false,
+								"new":      "9",
+								"old":      "",
+							},
+							"egress.0.cidr_blocks.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"egress.0.cidr_blocks.0": {
+								"computed": false,
+								"new":      "0.0.0.0/0",
+								"old":      "",
+							},
+							"egress.0.description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"egress.0.from_port": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"egress.0.ipv6_cidr_blocks.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"egress.0.prefix_list_ids.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"egress.0.protocol": {
+								"computed": false,
+								"new":      "-1",
+								"old":      "",
+							},
+							"egress.0.security_groups.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"egress.0.self": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"egress.0.to_port": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ingress.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"ingress.0.%": {
+								"computed": false,
+								"new":      "9",
+								"old":      "",
+							},
+							"ingress.0.cidr_blocks.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"ingress.0.cidr_blocks.0": {
+								"computed": false,
+								"new":      "0.0.0.0/0",
+								"old":      "",
+							},
+							"ingress.0.description": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ingress.0.from_port": {
+								"computed": false,
+								"new":      "443",
+								"old":      "",
+							},
+							"ingress.0.ipv6_cidr_blocks.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"ingress.0.prefix_list_ids.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"ingress.0.protocol": {
+								"computed": false,
+								"new":      "tcp",
+								"old":      "",
+							},
+							"ingress.0.security_groups.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"ingress.0.self": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"ingress.0.to_port": {
+								"computed": false,
+								"new":      "443",
+								"old":      "",
+							},
+							"name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name_prefix": {
+								"computed": false,
+								"new":      "api-eks-node-group-sg-",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"revoke_rules_on_delete": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_subnet": {
+				"api_pri_subnet": {
+					0: {
+						"applied": {
+							"assign_ipv6_address_on_creation":                false,
+							"availability_zone":                              "us-east-1a",
+							"cidr_block":                                     "192.165.3.0/24",
+							"customer_owned_ipv4_pool":                       null,
+							"enable_dns64":                                   false,
+							"enable_lni_at_device_index":                     null,
+							"enable_resource_name_dns_a_record_on_launch":    false,
+							"enable_resource_name_dns_aaaa_record_on_launch": false,
+							"ipv6_cidr_block":                                null,
+							"ipv6_native":                                    false,
+							"map_customer_owned_ip_on_launch":                null,
+							"map_public_ip_on_launch":                        false,
+							"outpost_arn":                                    null,
+							"tags": {
+								"Name": "api-private-subnet-0",
+							},
+							"tags_all": {
+								"Name": "api-private-subnet-0",
+							},
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_ipv6_address_on_creation": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"availability_zone": {
+								"computed": false,
+								"new":      "us-east-1a",
+								"old":      "",
+							},
+							"availability_zone_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "192.165.3.0/24",
+								"old":      "",
+							},
+							"customer_owned_ipv4_pool": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns64": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enable_lni_at_device_index": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_resource_name_dns_a_record_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enable_resource_name_dns_aaaa_record_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_native": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"map_customer_owned_ip_on_launch": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"map_public_ip_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"outpost_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_dns_hostname_type_on_launch": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "api-private-subnet-0",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "api-private-subnet-0",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					1: {
+						"applied": {
+							"assign_ipv6_address_on_creation":                false,
+							"availability_zone":                              "us-east-1b",
+							"cidr_block":                                     "192.165.4.0/24",
+							"customer_owned_ipv4_pool":                       null,
+							"enable_dns64":                                   false,
+							"enable_lni_at_device_index":                     null,
+							"enable_resource_name_dns_a_record_on_launch":    false,
+							"enable_resource_name_dns_aaaa_record_on_launch": false,
+							"ipv6_cidr_block":                                null,
+							"ipv6_native":                                    false,
+							"map_customer_owned_ip_on_launch":                null,
+							"map_public_ip_on_launch":                        false,
+							"outpost_arn":                                    null,
+							"tags": {
+								"Name": "api-private-subnet-1",
+							},
+							"tags_all": {
+								"Name": "api-private-subnet-1",
+							},
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_ipv6_address_on_creation": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"availability_zone": {
+								"computed": false,
+								"new":      "us-east-1b",
+								"old":      "",
+							},
+							"availability_zone_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "192.165.4.0/24",
+								"old":      "",
+							},
+							"customer_owned_ipv4_pool": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns64": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enable_lni_at_device_index": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_resource_name_dns_a_record_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enable_resource_name_dns_aaaa_record_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_native": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"map_customer_owned_ip_on_launch": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"map_public_ip_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"outpost_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_dns_hostname_type_on_launch": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "api-private-subnet-1",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "api-private-subnet-1",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+				"api_pub_subnet": {
+					0: {
+						"applied": {
+							"assign_ipv6_address_on_creation":                false,
+							"availability_zone":                              "us-east-1a",
+							"cidr_block":                                     "192.165.1.0/24",
+							"customer_owned_ipv4_pool":                       null,
+							"enable_dns64":                                   false,
+							"enable_lni_at_device_index":                     null,
+							"enable_resource_name_dns_a_record_on_launch":    false,
+							"enable_resource_name_dns_aaaa_record_on_launch": false,
+							"ipv6_cidr_block":                                null,
+							"ipv6_native":                                    false,
+							"map_customer_owned_ip_on_launch":                null,
+							"map_public_ip_on_launch":                        false,
+							"outpost_arn":                                    null,
+							"tags": {
+								"Name": "api-public-subnet-0",
+							},
+							"tags_all": {
+								"Name": "api-public-subnet-0",
+							},
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_ipv6_address_on_creation": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"availability_zone": {
+								"computed": false,
+								"new":      "us-east-1a",
+								"old":      "",
+							},
+							"availability_zone_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "192.165.1.0/24",
+								"old":      "",
+							},
+							"customer_owned_ipv4_pool": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns64": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enable_lni_at_device_index": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_resource_name_dns_a_record_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enable_resource_name_dns_aaaa_record_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_native": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"map_customer_owned_ip_on_launch": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"map_public_ip_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"outpost_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_dns_hostname_type_on_launch": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "api-public-subnet-0",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "api-public-subnet-0",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+					1: {
+						"applied": {
+							"assign_ipv6_address_on_creation":                false,
+							"availability_zone":                              "us-east-1b",
+							"cidr_block":                                     "192.165.2.0/24",
+							"customer_owned_ipv4_pool":                       null,
+							"enable_dns64":                                   false,
+							"enable_lni_at_device_index":                     null,
+							"enable_resource_name_dns_a_record_on_launch":    false,
+							"enable_resource_name_dns_aaaa_record_on_launch": false,
+							"ipv6_cidr_block":                                null,
+							"ipv6_native":                                    false,
+							"map_customer_owned_ip_on_launch":                null,
+							"map_public_ip_on_launch":                        false,
+							"outpost_arn":                                    null,
+							"tags": {
+								"Name": "api-public-subnet-1",
+							},
+							"tags_all": {
+								"Name": "api-public-subnet-1",
+							},
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_ipv6_address_on_creation": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"availability_zone": {
+								"computed": false,
+								"new":      "us-east-1b",
+								"old":      "",
+							},
+							"availability_zone_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "192.165.2.0/24",
+								"old":      "",
+							},
+							"customer_owned_ipv4_pool": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns64": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enable_lni_at_device_index": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_resource_name_dns_a_record_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enable_resource_name_dns_aaaa_record_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_native": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"map_customer_owned_ip_on_launch": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"map_public_ip_on_launch": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"outpost_arn": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_dns_hostname_type_on_launch": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.Name": {
+								"computed": false,
+								"new":      "api-public-subnet-1",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags_all.Name": {
+								"computed": false,
+								"new":      "api-public-subnet-1",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vpc_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"aws_vpc": {
+				"api_vpc": {
+					0: {
+						"applied": {
+							"assign_generated_ipv6_cidr_block": null,
+							"cidr_block":                       "192.165.0.0/16",
+							"enable_dns_support":               true,
+							"instance_tenancy":                 "default",
+							"ipv4_ipam_pool_id":                null,
+							"ipv4_netmask_length":              null,
+							"ipv6_ipam_pool_id":                null,
+							"ipv6_netmask_length":              null,
+							"tags": {
+								"name": "api-proj-vpc",
+							},
+							"tags_all": {
+								"name": "api-proj-vpc",
+							},
+						},
+						"destroy": false,
+						"diff": {
+							"arn": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"assign_generated_ipv6_cidr_block": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"cidr_block": {
+								"computed": false,
+								"new":      "192.165.0.0/16",
+								"old":      "",
+							},
+							"default_network_acl_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"default_security_group_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dhcp_options_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_hostnames": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_dns_support": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"enable_network_address_usage_metrics": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"instance_tenancy": {
+								"computed": false,
+								"new":      "default",
+								"old":      "",
+							},
+							"ipv4_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv4_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_association_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_cidr_block_network_border_group": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_ipam_pool_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ipv6_netmask_length": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"main_route_table_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"owner_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags.name": {
+								"computed": false,
+								"new":      "api-proj-vpc",
+								"old":      "",
+							},
+							"tags_all.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"tags_all.name": {
+								"computed": false,
+								"new":      "api-proj-vpc",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"kubernetes_deployment": {
+				"api_eks_deployment": {
+					0: {
+						"applied": {
+							"metadata": [
+								{
+									"annotations":   null,
+									"generate_name": null,
+									"labels": {
+										"app": "api-application",
+									},
+									"name":      "api-eks-app-deployment",
+									"namespace": "api-eks-namespace",
+								},
+							],
+							"spec": [
+								{
+									"min_ready_seconds":         0,
+									"paused":                    false,
+									"progress_deadline_seconds": 600,
+									"replicas":                  "3",
+									"revision_history_limit":    10,
+									"selector": [
+										{
+											"match_expressions": [],
+											"match_labels": {
+												"app": "api-application",
+											},
+										},
+									],
+									"template": [
+										{
+											"metadata": [
+												{
+													"annotations":   null,
+													"generate_name": null,
+													"labels": {
+														"app": "api-application",
+													},
+													"namespace": null,
+												},
+											],
+											"spec": [
+												{
+													"active_deadline_seconds":         null,
+													"affinity":                        [],
+													"automount_service_account_token": true,
+													"container": [
+														{
+															"args":            null,
+															"command":         null,
+															"env":             [],
+															"env_from":        [],
+															"image":           "aaronhood/api-current-time:1",
+															"lifecycle":       [],
+															"liveness_probe":  [],
+															"name":            "api-eks-container",
+															"port":            [],
+															"readiness_probe": [],
+															"resources": [
+																{
+																	"limits": {
+																		"cpu":    "0.5",
+																		"memory": "512Mi",
+																	},
+																	"requests": {
+																		"cpu":    "250m",
+																		"memory": "50Mi",
+																	},
+																},
+															],
+															"security_context":         [],
+															"startup_probe":            [],
+															"stdin":                    false,
+															"stdin_once":               false,
+															"termination_message_path": "/dev/termination-log",
+															"tty":          false,
+															"volume_mount": [],
+															"working_dir":  null,
+														},
+													],
+													"dns_config":           [],
+													"dns_policy":           "ClusterFirst",
+													"enable_service_links": true,
+													"host_aliases":         [],
+													"host_ipc":             false,
+													"host_network":         false,
+													"host_pid":             false,
+													"init_container":       [],
+													"node_selector":        null,
+													"os":                   [],
+													"priority_class_name":              null,
+													"restart_policy":                   "Always",
+													"runtime_class_name":               null,
+													"security_context":                 [],
+													"share_process_namespace":          false,
+													"subdomain":                        null,
+													"termination_grace_period_seconds": 30,
+													"toleration":                       [],
+													"topology_spread_constraint":       [],
+													"volume":                           [],
+												},
+											],
+										},
+									],
+								},
+							],
+							"timeouts":         null,
+							"wait_for_rollout": true,
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"metadata.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.annotations": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.generate_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.generation": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.labels.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"metadata.0.labels.app": {
+								"computed": false,
+								"new":      "api-application",
+								"old":      "",
+							},
+							"metadata.0.name": {
+								"computed": false,
+								"new":      "api-eks-app-deployment",
+								"old":      "",
+							},
+							"metadata.0.namespace": {
+								"computed": false,
+								"new":      "api-eks-namespace",
+								"old":      "",
+							},
+							"metadata.0.resource_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.uid": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.min_ready_seconds": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.paused": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.progress_deadline_seconds": {
+								"computed": false,
+								"new":      "600",
+								"old":      "",
+							},
+							"spec.0.replicas": {
+								"computed": false,
+								"new":      "3",
+								"old":      "",
+							},
+							"spec.0.revision_history_limit": {
+								"computed": false,
+								"new":      "10",
+								"old":      "",
+							},
+							"spec.0.selector.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.selector.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"spec.0.selector.0.match_expressions.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.selector.0.match_labels.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.selector.0.match_labels.app": {
+								"computed": false,
+								"new":      "api-application",
+								"old":      "",
+							},
+							"spec.0.strategy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.template.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.annotations": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.generate_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.generation": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.labels.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.labels.app": {
+								"computed": false,
+								"new":      "api-application",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.namespace": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.resource_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.metadata.0.uid": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.active_deadline_seconds": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.affinity.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.automount_service_account_token": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.args": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.command": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.env.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.env_from.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.image": {
+								"computed": false,
+								"new":      "aaronhood/api-current-time:1",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.image_pull_policy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.lifecycle.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.liveness_probe.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.name": {
+								"computed": false,
+								"new":      "api-eks-container",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.port.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.readiness_probe.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.resources.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.resources.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.resources.0.limits.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.resources.0.limits.cpu": {
+								"computed": false,
+								"new":      "0.5",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.resources.0.limits.memory": {
+								"computed": false,
+								"new":      "512Mi",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.resources.0.requests.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.resources.0.requests.cpu": {
+								"computed": false,
+								"new":      "250m",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.resources.0.requests.memory": {
+								"computed": false,
+								"new":      "50Mi",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.security_context.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.startup_probe.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.stdin": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.stdin_once": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.termination_message_path": {
+								"computed": false,
+								"new":      "/dev/termination-log",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.termination_message_policy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.tty": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.volume_mount.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.container.0.working_dir": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.dns_config.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.dns_policy": {
+								"computed": false,
+								"new":      "ClusterFirst",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.enable_service_links": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.host_aliases.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.host_ipc": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.host_network": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.host_pid": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.hostname": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.image_pull_secrets": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.init_container.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.node_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.node_selector": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.os.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.priority_class_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.readiness_gate": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.restart_policy": {
+								"computed": false,
+								"new":      "Always",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.runtime_class_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.scheduler_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.security_context.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.service_account_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.share_process_namespace": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.subdomain": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.termination_grace_period_seconds": {
+								"computed": false,
+								"new":      "30",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.toleration.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.topology_spread_constraint.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.template.0.spec.0.volume.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"wait_for_rollout": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"kubernetes_namespace": {
+				"api_eks_namespace": {
+					0: {
+						"applied": {
+							"metadata": [
+								{
+									"annotations":   null,
+									"generate_name": null,
+									"labels":        null,
+									"name":          "api-eks-namespace",
+								},
+							],
+							"timeouts":                         null,
+							"wait_for_default_service_account": false,
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"metadata.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.annotations": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.generate_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.generation": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.labels": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.name": {
+								"computed": false,
+								"new":      "api-eks-namespace",
+								"old":      "",
+							},
+							"metadata.0.resource_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.uid": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"wait_for_default_service_account": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"kubernetes_pod": {
+				"api_pod": {
+					0: {
+						"applied": {
+							"metadata": [
+								{
+									"annotations":   null,
+									"generate_name": null,
+									"labels": {
+										"app": "api-application",
+									},
+									"name":      "api-eks-app-pod",
+									"namespace": "api-eks-namespace",
+								},
+							],
+							"spec": [
+								{
+									"active_deadline_seconds":         null,
+									"affinity":                        [],
+									"automount_service_account_token": true,
+									"container": [
+										{
+											"args":           null,
+											"command":        null,
+											"env":            [],
+											"env_from":       [],
+											"image":          "aaronhood/api-current-time:1",
+											"lifecycle":      [],
+											"liveness_probe": [],
+											"name":           "api-eks-container",
+											"port": [
+												{
+													"container_port": 8000,
+													"host_ip":        null,
+													"host_port":      null,
+													"name":           null,
+													"protocol":       "TCP",
+												},
+											],
+											"readiness_probe":          [],
+											"security_context":         [],
+											"startup_probe":            [],
+											"stdin":                    false,
+											"stdin_once":               false,
+											"termination_message_path": "/dev/termination-log",
+											"tty":          false,
+											"volume_mount": [],
+											"working_dir":  null,
+										},
+									],
+									"dns_config":           [],
+									"dns_policy":           "ClusterFirst",
+									"enable_service_links": true,
+									"host_aliases":         [],
+									"host_ipc":             false,
+									"host_network":         false,
+									"host_pid":             false,
+									"init_container":       [],
+									"node_selector":        null,
+									"os":                   [],
+									"priority_class_name":              null,
+									"restart_policy":                   "Always",
+									"runtime_class_name":               null,
+									"security_context":                 [],
+									"share_process_namespace":          false,
+									"subdomain":                        null,
+									"termination_grace_period_seconds": 30,
+									"toleration":                       [],
+									"topology_spread_constraint":       [],
+									"volume":                           [],
+								},
+							],
+							"target_state": null,
+							"timeouts":     null,
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"metadata.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.annotations": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.generate_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.generation": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.labels.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"metadata.0.labels.app": {
+								"computed": false,
+								"new":      "api-application",
+								"old":      "",
+							},
+							"metadata.0.name": {
+								"computed": false,
+								"new":      "api-eks-app-pod",
+								"old":      "",
+							},
+							"metadata.0.namespace": {
+								"computed": false,
+								"new":      "api-eks-namespace",
+								"old":      "",
+							},
+							"metadata.0.resource_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.uid": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.active_deadline_seconds": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.affinity.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.automount_service_account_token": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"spec.0.container.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.container.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.container.0.args": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.container.0.command": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.container.0.env.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.container.0.env_from.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.container.0.image": {
+								"computed": false,
+								"new":      "aaronhood/api-current-time:1",
+								"old":      "",
+							},
+							"spec.0.container.0.image_pull_policy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.container.0.lifecycle.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.container.0.liveness_probe.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.container.0.name": {
+								"computed": false,
+								"new":      "api-eks-container",
+								"old":      "",
+							},
+							"spec.0.container.0.port.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.container.0.port.0.%": {
+								"computed": false,
+								"new":      "5",
+								"old":      "",
+							},
+							"spec.0.container.0.port.0.container_port": {
+								"computed": false,
+								"new":      "8000",
+								"old":      "",
+							},
+							"spec.0.container.0.port.0.host_ip": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.container.0.port.0.host_port": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.container.0.port.0.name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.container.0.port.0.protocol": {
+								"computed": false,
+								"new":      "TCP",
+								"old":      "",
+							},
+							"spec.0.container.0.readiness_probe.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.container.0.resources": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.container.0.security_context.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.container.0.startup_probe.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.container.0.stdin": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.container.0.stdin_once": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.container.0.termination_message_path": {
+								"computed": false,
+								"new":      "/dev/termination-log",
+								"old":      "",
+							},
+							"spec.0.container.0.termination_message_policy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.container.0.tty": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.container.0.volume_mount.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.container.0.working_dir": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.dns_config.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.dns_policy": {
+								"computed": false,
+								"new":      "ClusterFirst",
+								"old":      "",
+							},
+							"spec.0.enable_service_links": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"spec.0.host_aliases.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.host_ipc": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.host_network": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.host_pid": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.hostname": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.image_pull_secrets": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.init_container.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.node_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.node_selector": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.os.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.priority_class_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.readiness_gate": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.restart_policy": {
+								"computed": false,
+								"new":      "Always",
+								"old":      "",
+							},
+							"spec.0.runtime_class_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.scheduler_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.security_context.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.service_account_name": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.share_process_namespace": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.subdomain": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.termination_grace_period_seconds": {
+								"computed": false,
+								"new":      "30",
+								"old":      "",
+							},
+							"spec.0.toleration.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.topology_spread_constraint.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"spec.0.volume.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"target_state": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"kubernetes_service": {
+				"api_eks_service": {
+					0: {
+						"applied": {
+							"metadata": [
+								{
+									"annotations":   null,
+									"generate_name": null,
+									"labels":        null,
+									"name":          "api-service",
+									"namespace":     "api-eks-namespace",
+								},
+							],
+							"spec": [
+								{
+									"allocate_load_balancer_node_ports": true,
+									"external_ips":                      null,
+									"external_name":                     null,
+									"load_balancer_class":               null,
+									"load_balancer_ip":                  null,
+									"load_balancer_source_ranges":       null,
+									"port": [
+										{
+											"app_protocol": null,
+											"name":         null,
+											"port":         80,
+											"protocol":     "TCP",
+											"target_port":  "8000",
+										},
+									],
+									"publish_not_ready_addresses": false,
+									"selector": {
+										"app": "api-application",
+									},
+									"session_affinity": "None",
+									"type":             "LoadBalancer",
+								},
+							],
+							"timeouts":               null,
+							"wait_for_load_balancer": true,
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"metadata.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.annotations": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.generate_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.generation": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.labels": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.name": {
+								"computed": false,
+								"new":      "api-service",
+								"old":      "",
+							},
+							"metadata.0.namespace": {
+								"computed": false,
+								"new":      "api-eks-namespace",
+								"old":      "",
+							},
+							"metadata.0.resource_version": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"metadata.0.uid": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.allocate_load_balancer_node_ports": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"spec.0.cluster_ip": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.cluster_ips": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.external_ips": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.external_name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.external_traffic_policy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.health_check_node_port": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.internal_traffic_policy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.ip_families": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.ip_family_policy": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.load_balancer_class": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.load_balancer_ip": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.load_balancer_source_ranges": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.port.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.port.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.port.0.app_protocol": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.port.0.name": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.port.0.node_port": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.port.0.port": {
+								"computed": false,
+								"new":      "80",
+								"old":      "",
+							},
+							"spec.0.port.0.protocol": {
+								"computed": false,
+								"new":      "TCP",
+								"old":      "",
+							},
+							"spec.0.port.0.target_port": {
+								"computed": false,
+								"new":      "8000",
+								"old":      "",
+							},
+							"spec.0.publish_not_ready_addresses": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"spec.0.selector.%": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"spec.0.selector.app": {
+								"computed": false,
+								"new":      "api-application",
+								"old":      "",
+							},
+							"spec.0.session_affinity": {
+								"computed": false,
+								"new":      "None",
+								"old":      "",
+							},
+							"spec.0.session_affinity_config": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"spec.0.type": {
+								"computed": false,
+								"new":      "LoadBalancer",
+								"old":      "",
+							},
+							"status.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"wait_for_load_balancer": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.10.3"
+
+variables = {
+	"availability_zones": [
+		"us-east-1a",
+		"us-east-1b",
+	],
+	"cidr_block":   "0.0.0.0/0",
+	"cluster-name": "eks-api-cluster",
+	"eks_version":  "1.31",
+	"private_subnet_cidrs": [
+		"192.165.3.0/24",
+		"192.165.4.0/24",
+	],
+	"public_subnet_cidrs": [
+		"192.165.1.0/24",
+		"192.165.2.0/24",
+	],
+	"vpc_cidr": "192.165.0.0/16",
+}
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources

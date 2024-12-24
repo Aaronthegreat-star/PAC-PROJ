@@ -1,0 +1,29 @@
+  restrict-availability-zones.sentinel:7:32: missing ',' before newline in list literal (and 4 more errors)import "tfplan/v2" as tfplan
+  import "tfplan/v2" as tfplan
+
+# Define required subnets and availability zones
+required_subnets = [
+    "subnet-055b1424b0ebdaf5d",
+    "subnet-06d154ee74cb2e728",
+    "subnet-0c597c1c245d4c15f",
+    "subnet-0f89ee852c8aef9eb",
+]
+
+required_azs = [
+    "us-east-1a",
+    "us-east-1b",
+]
+
+# Rule to validate EKS cluster subnet configuration
+check_az_and_subnets = rule {
+    all tfplan.resource_changes as _, rc {
+        rc.type is "aws_eks_cluster" implies
+        rc.change.after.vpc_config[0].subnet_ids contains all required_subnets and
+        length(rc.change.after.vpc_config[0].subnet_ids) == 4
+    }
+}
+
+# Main rule to enforce policy
+main = rule {
+    check_az_and_subnets
+}

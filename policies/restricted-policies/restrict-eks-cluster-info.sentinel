@@ -1,0 +1,15 @@
+import "tfplan/v2" as tfplan
+import "mock-tfplan.sentinel" as tfplan_mock
+
+allowed_kubernetes_versions = ["1.31"]
+
+check_k8s_version = rule {
+    all tfplan.resources as cluster {
+        cluster.type is "aws_eks_cluster" and
+        cluster.change.after.version in allowed_kubernetes_versions
+    }
+}
+
+main = rule {
+    check_k8s_version
+}

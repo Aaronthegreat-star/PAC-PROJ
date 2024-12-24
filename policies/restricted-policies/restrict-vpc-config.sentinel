@@ -1,0 +1,17 @@
+import "tfplan/v2" as tfplan
+
+# Rule to check EKS cluster endpoint configuration
+check_vpc_endpoints = rule {
+    all tfplan.resources as rc {
+        rc.type is "aws_eks_cluster" and
+            rc.change.after.vpc_config is not null and
+            rc.change.after.vpc_config.endpoint_private_access == true and
+            rc.change.after.vpc_config.endpoint_public_access == false
+    }
+}
+
+# Main rule to enforce the policy
+main = rule {
+    check_vpc_endpoints
+}
+
