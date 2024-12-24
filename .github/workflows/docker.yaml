@@ -3,7 +3,7 @@ name : Building the Docker Image
 on:
   push:
     branches:
-      -main
+      - main
     
   pull_request:
     branches:
