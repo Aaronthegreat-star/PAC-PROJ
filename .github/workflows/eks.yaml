@@ -47,18 +47,18 @@ jobs:
 
       - name: Terraform Init
         run: |
-         cd ~/Infrastructure
+         cd Infrastructure
          terraform init
 
       - name: Terraform validate and fmt
         run: |
-          cd ~/Infrastructure
+          cd Infrastructure
           terraform validate
           terraform fmt
 
       - name: Terraform plan
         run: |
-          cd ~/Infrastructure
+          cd Infrastructure
           terraform plan
 
       - name: Terraform Apply
