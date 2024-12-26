@@ -1,0 +1,87 @@
+name: Deploying the EKS infrastructure
+
+on: 
+  push:
+    branches:
+        - main
+
+  pull_request:
+    branches:
+        - main
+
+  workflow_run:
+    workflows: ["Build and pushing the Docker Image"]
+    types:
+      - completed
+
+jobs:
+    Configuring the CLI:
+        runs-on: ubuntu-24.04
+
+        steps: 
+         - name: Checkout code
+           uses: actions/checkout@v3
+
+         - name: Configure AWS CLI
+           env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS_REGION: ${{ secrets.AWS_REGION }}
+           run: |
+            ${AWS_ACCESS_KEY_ID}
+            ${AWS_SECRET_ACCESS_KEY}
+            ${AWS_REGION}
+
+    provision-eks:
+        runs-on: ubuntu-latest
+        needs: Configuring the CLI
+       
+        steps:
+      
+        - name: Checkout Code
+          uses: actions/checkout@v3
+
+
+        - name: Set up Terraform
+          uses: hashicorp/setup-terraform@v2
+          with:
+          terraform_version: latest # preferred Terraform version
+
+        # Initialize Terraform
+        - name: Terraform Init
+          run: terraform init
+      
+        # validate and format the terraform code 
+        - name: Terraform validate and fmt 
+          run: |
+           terraform validate
+           terraform fmt
+
+        # plans the rsources that will be deployed
+        - name: Terraform plan
+          run: terraform plan
+
+        # Apply Terraform
+        - name: Terraform Apply
+          env:
+           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          run: terraform apply -auto-approve
+
+
+    Configuring the EKS kubeconfig:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Configure kubeconfig
+        env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+         # Verify AWS CLI installation
+         aws --version
+         # Ensure the terraform output exists
+         echo "EKS Cluster ID: $(terraform output -raw eks_cluster_id)"
+
+         # Update kubeconfig for EKS
+        aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name $(terraform output -raw eks_cluster_id)
