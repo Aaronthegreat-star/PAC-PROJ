@@ -54,7 +54,9 @@ jobs:
           terraform fmt
 
       - name: Terraform plan
-        run: terraform plan
+        run: |
+          cd ./Infrastructure
+          terraform plan
 
       - name: Terraform Apply
         env:
