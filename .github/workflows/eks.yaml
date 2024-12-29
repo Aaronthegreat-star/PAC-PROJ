@@ -13,6 +13,13 @@ on:
     workflows: ["Build and pushing the Docker Image"]
     types:
       - completed
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  TF_WORKSPACE: ${{ secrets.TF_WORKSPACE }}
+  API_TOKEN: ${{ secrets.TF_API_TOKEN }}
+
 
 jobs:
 
@@ -62,9 +69,6 @@ jobs:
           terraform plan
 
       - name: Terraform Apply
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           cd 
           terraform apply -auto-approve
@@ -77,10 +81,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Configure kubeconfig
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
         run: |
           # Verify AWS CLI installation
           aws --version
@@ -90,3 +90,5 @@ jobs:
 
           # Update kubeconfig for EKS
           aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name $EKS_CLUSTER_ID
+ 
+  
