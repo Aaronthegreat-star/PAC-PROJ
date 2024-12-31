@@ -72,6 +72,12 @@ jobs:
         run: |
           cd Infrastructure
           terraform apply -auto-approve
+        continue-on-error: true
+
+      - name: Terraform Destroy
+        run: |
+          cd Infrastructure
+          terraform destroy -auto-approve
 
   configuring-the-eks-kubeconfig:
     runs-on: ubuntu-latest
