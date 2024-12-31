@@ -37,4 +37,6 @@ jobs:
           terraform_version: latest
 
       - name: Terraform Destroy
-        run: terraform destroy -auto-approve
+        run: |
+          cd Infrastructure
+          terraform destroy -auto-approve

@@ -82,8 +82,6 @@ jobs:
 
       - name: Configure kubeconfig
         run: |
-          # Verify AWS CLI installation
-          aws --version
           # Ensure the terraform output exists
           EKS_CLUSTER_ID=$(terraform output -raw eks_cluster_id)
           echo "EKS Cluster ID: $EKS_CLUSTER_ID"

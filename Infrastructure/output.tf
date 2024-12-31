@@ -1,5 +1,5 @@
 output "eks_cluster_id" {
-  value = aws_eks_cluster.api_eks_cluster.cluster_id
+  value = aws_eks_cluster.api_eks_cluster.id
 }
 output "vpc_id" {
   value = aws_vpc.api_vpc.id
