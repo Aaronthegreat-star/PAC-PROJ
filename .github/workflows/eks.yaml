@@ -92,10 +92,15 @@ jobs:
           cd Infrastructure
           terraform apply -auto-approve
         continue-on-error: true
+      
+      - name: Terraform Plan Destroy
+        run: terraform plan -destroy -out=tfplan-destroy
+
+      - name: Terraform Apply Destroy
+        run: terraform apply -auto-approve tfplan-destroy
 
       # - name: Terraform Destroy
       #   run: |
-      #     cd Infrastructure
       #     terraform destroy -auto-approve
       
       # - name: Upload Terraform State as Artifact
@@ -104,20 +109,20 @@ jobs:
       #     name: terraform-state
       #     path: ./terraform-state
 
-  configuring-the-eks-kubeconfig:
-    runs-on: ubuntu-latest
-    needs: provision-eks
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+  # configuring-the-eks-kubeconfig:
+  #   runs-on: ubuntu-latest
+  #   needs: provision-eks
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v3
 
-      - name: Configure kubeconfig
-        run: |
-          # Ensure the terraform output exists
-          EKS_CLUSTER_ID=$(terraform output -raw eks_cluster_id)
-          echo "EKS Cluster ID: $EKS_CLUSTER_ID"
+  #     - name: Configure kubeconfig
+  #       run: |
+  #         # Ensure the terraform output exists
+  #         EKS_CLUSTER_ID=$(terraform output -raw eks_cluster_id)
+  #         echo "EKS Cluster ID: $EKS_CLUSTER_ID"
 
-          # Update kubeconfig for EKS
-          aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name $EKS_CLUSTER_ID
+  #         # Update kubeconfig for EKS
+  #         aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name $EKS_CLUSTER_ID
  
   
