@@ -55,7 +55,7 @@ jobs:
       - name: Terraform Init
         run: |
          cd Infrastructure
-         terraform login
+         terraform login -y
          terraform init
 
       - name: Terraform validate and fmt
