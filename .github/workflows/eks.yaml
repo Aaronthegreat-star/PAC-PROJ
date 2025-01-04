@@ -56,7 +56,7 @@ jobs:
         run: |
          cd Infrastructure
          terraform init \
-          -backend-config="api_token=${{ secrets.TF_API_TOKEN }}"
+          -backend-config="TFE_TOKEN=${{ secrets.TF_API_TOKEN }}"
 
       - name: Terraform validate and fmt
         run: |
