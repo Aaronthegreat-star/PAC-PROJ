@@ -71,7 +71,7 @@ jobs:
           terraform init \
             -backend-config="hostname=app.terraform.io" \
             -backend-config="organization=Aaronhood" \
-            -backend-config="token=${TF__API_TOKEN}" \
+            -backend-config="token=${{ secrets.TF_API_TOKEN }}" 
             
          
 
