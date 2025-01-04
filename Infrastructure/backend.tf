@@ -8,15 +8,15 @@
 # #   }
 # # }
 
-# terraform {
-#     backend "remote" {
-#     = "Aaronhood"
+terraform {
+    backend "remote" {
+        organization = "Aaronhood"
 
-#         workspaces {
-#             name = "PAC-PROJ"
-#         }
-#     }
-# }
+        workspaces {
+            name = "PAC-PROJ"
+        }
+    }
+}
 # resource "aws_s3_bucket" "terraform_state" {
 #    bucket = "api-terraform-state-file-bucket"
 # #    region = "us-east-1"

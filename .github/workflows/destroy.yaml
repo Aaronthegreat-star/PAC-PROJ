@@ -1,14 +1,6 @@
 name: Destroying the Infrastructure
 
 on: 
-  push:
-    branches:
-        - main
-
-  pull_request:
-    branches:
-        - main
-
   workflow_dispatch:
 
   workflow_run:
@@ -36,8 +28,13 @@ jobs:
         with:
           terraform_version: latest
 
+      # - name: Download Terraform State Artifact
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: terraform-state
+      #     path: ./terraform-state
+
       - name: Terraform Destroy
         run: |
-          cd Infrastructure
-          terraform init
           terraform destroy -auto-approve
+       
