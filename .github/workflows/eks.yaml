@@ -72,7 +72,7 @@ jobs:
             -backend-config="hostname=app.terraform.io" \
             -backend-config="organization=Aaronhood" \
             -backend-config="token=${TF__API_TOKEN}" \
-            -backend-config="workspace=PAC-PROJ"
+            
          
 
       - name: Terraform validate and fmt
