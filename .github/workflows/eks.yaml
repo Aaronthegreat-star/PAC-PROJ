@@ -21,11 +21,12 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: ${{ secrets.AWS_REGION }}
-  TF_WORKSPACE: ${{ secrets.TF_WORKSPACE }}
+  # TF_WORKSPACE: ${{ secrets.TF_WORKSPACE }}
   API_TOKEN: ${{ secrets.TF_API_TOKEN }}
-  tfc_organisation: Aaronhood 
-  tfc_hostname: app.terraform.io
-  tfc_workspace: PAC-PROJ 
+  # TF_CLOUD_ORGANIZATION: ${{ secrets.TF_CLOUD_ORGANIZATION }}
+  # TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
+  # TF_CLOUD_HOSTNAME: ${{ secrets.TF_CLOUD_HOSTNAME }}
+  # TF_CLOUD_WORKSPACE: ${{ secrets.TF_WORKSPACE }}
  
 
 
@@ -67,7 +68,11 @@ jobs:
       - name: Terraform Init
         run: |
          cd Infrastructure
-         terraform init 
+          terraform init \
+            -backend-config="hostname=app.terraform.io" \
+            -backend-config="organization=Aaronhood" \
+            -backend-config="token=${TF__API_TOKEN}" \
+            -backend-config="workspace=PAC-PROJ"
          
 
       - name: Terraform validate and fmt
