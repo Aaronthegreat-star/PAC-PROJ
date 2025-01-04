@@ -84,7 +84,7 @@ jobs:
       - name: Terraform plan
         run: |
           cd Infrastructure
-          terraform plan -out=tfplan 
+          terraform plan 
 
 
       - name: Terraform Apply
@@ -94,10 +94,10 @@ jobs:
         continue-on-error: true
       
       - name: Terraform Plan Destroy
-        run: terraform plan -destroy -out=tfplan-destroy
+        run: terraform plan -destroy 
 
       - name: Terraform Apply Destroy
-        run: terraform apply -auto-approve tfplan-destroy
+        run: terraform apply -auto-approve 
 
       # - name: Terraform Destroy
       #   run: |
