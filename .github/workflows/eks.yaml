@@ -93,11 +93,11 @@ jobs:
           terraform apply -auto-approve
         # continue-on-error: true
       
-      - name: Terraform Plan Destroy
-        run: terraform plan -destroy 
+      # - name: Terraform Plan Destroy
+      #   run: terraform plan -destroy 
 
-      - name: Terraform Apply Destroy
-        run: terraform apply -auto-approve 
+      # - name: Terraform Apply Destroy
+      #   run: terraform apply -auto-approve 
 
       # - name: Terraform Destroy
       #   run: |
