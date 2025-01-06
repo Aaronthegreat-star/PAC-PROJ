@@ -75,11 +75,11 @@ jobs:
             
          
 
-      - name: Terraform validate and fmt
+      - name: Terraform validate
         run: |
           cd Infrastructure
           terraform validate
-          terraform fmt
+          
 
       - name: Terraform plan
         run: |
@@ -91,7 +91,7 @@ jobs:
         run: |
           cd Infrastructure
           terraform apply -auto-approve
-        continue-on-error: true
+        # continue-on-error: true
       
       - name: Terraform Plan Destroy
         run: terraform plan -destroy 
