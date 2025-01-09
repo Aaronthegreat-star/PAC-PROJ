@@ -1,8 +1,9 @@
 resource "kubernetes_namespace" "api_eks_namespace" {
   metadata {
     name = "api-eks-namespace"
-  }
-  depends_on = [aws_eks_node_group.api_eks_group]
+
+}
+  depends_on = [aws_eks_cluster.api_eks_cluster]
 }
 
 resource "kubernetes_pod" "api_pod" {
@@ -24,7 +25,7 @@ resource "kubernetes_pod" "api_pod" {
       }
     }
   }
-  depends_on = [aws_eks_node_group.api_eks_group]
+depends_on = [aws_eks_node_group.api_eks_group, aws_eks_cluster.api_eks_cluster, kubernetes_namespace.api_eks_namespace]
 }
 
 resource "kubernetes_deployment" "api_eks_deployment" {
